@@ -25,6 +25,8 @@ public class Note {
         this.id = id;
     }
 
+    public int getId() {return id;}
+
     public String getTitle() {
         return title;
     }
