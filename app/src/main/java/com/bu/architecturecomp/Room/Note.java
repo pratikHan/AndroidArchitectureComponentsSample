@@ -1,4 +1,4 @@
-package com.bu.architecturecomp;
+package com.bu.architecturecomp.Room;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
