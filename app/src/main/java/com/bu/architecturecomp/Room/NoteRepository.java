@@ -5,15 +5,19 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.bu.architecturecomp.DebugX.Loggers;
+
 import java.util.List;
 
 public class NoteRepository {
 
+    private final String TAG = "NoteRepository";
     private NoteDao noteDao;
     private LiveData<List<Note>> allNotes;
 
     public NoteRepository(Application application) {
 
+        Loggers.show(TAG,"C","Instance");
         NoteDatabase database = NoteDatabase.getInstance(application);
         noteDao = database.noteDao();
         allNotes = noteDao.getAllNotes();

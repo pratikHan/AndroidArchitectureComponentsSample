@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.bu.architecturecomp.DebugX.Loggers;
 import com.bu.architecturecomp.Room.Note;
 import com.bu.architecturecomp.Room.NoteRepository;
 
@@ -14,12 +15,14 @@ import java.util.List;
 
 public class NoteViewModel extends AndroidViewModel {
 
+    private final String TAG = "NoteViewModel";
 
     NoteRepository repository;
     LiveData<List<Note>>  allNotes ;
 
     public NoteViewModel(@NonNull Application application){
         super(application);
+        Loggers.show(TAG, "C","Instance");
         repository = new NoteRepository(application);
         allNotes = repository.getAllNotes();
 
