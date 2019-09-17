@@ -38,6 +38,7 @@ dependencies {
 
     //Room Dependencies
     implementation "androidx.room:room-runtime:2.2.0-rc01"
-    annotationProcessor "androidx.room:room-compiler:2.2.0-rc01" // For Kotlin use kapt instead of annotationProcessor
+    annotationProcessor "androidx.room:room-compiler:2.2.0-rc01"
+    // For Kotlin use kapt instead of annotationProcessor
 
 }

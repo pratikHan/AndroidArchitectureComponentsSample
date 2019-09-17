@@ -2,9 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.bu.architecturecomp.MainActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+
+    <item android:id="@+id/menu_save"
+         android:icon="@drawable/ic_save"
+       android:title="Save"
+        app:showAsAction="ifRoom"/>
+
+
+
 </menu>
