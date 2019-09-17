@@ -1,5 +1,6 @@
 package com.bu.architecturecomp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.bu.architecturecomp.Room.Note;
@@ -25,12 +26,22 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int ADD_NOTE_REQUEST = 1;
     private NoteViewModel noteViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FloatingActionButton floatingActionButton = findViewById(R.id.button_add);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NoteActivity.class);
+                startActivityForResult(intent,ADD_NOTE_REQUEST);
+            }
+        });
 
 
 
@@ -59,7 +70,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-
-
+        if (requestCode == ADD_NOTE_REQUEST && resultCode == RESULT_OK ){
+            String title = data.getStringExtra(NoteActivity.EXTRA_TITLE);
+            String description = data.getStringExtra(NoteActivity.EXTRA_DESCRIPTION);
+            int priority = data.getIntExtra(NoteActivity.EXTRA_PRIORITY);
+        }
+    }
 }
