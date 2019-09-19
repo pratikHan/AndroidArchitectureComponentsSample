@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == ADD_NOTE_REQUEST && resultCode == RESULT_OK ){
             String title = data.getStringExtra(NoteActivity.EXTRA_TITLE);
             String description = data.getStringExtra(NoteActivity.EXTRA_DESCRIPTION);
-            int priority = data.getIntExtra(NoteActivity.EXTRA_PRIORITY);
+            int priority = data.getIntExtra(NoteActivity.EXTRA_PRIORITY,1);
         }
     }
 }
